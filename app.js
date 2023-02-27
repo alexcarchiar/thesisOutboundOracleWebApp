@@ -236,8 +236,6 @@ const contractABI = [
 const contract = new web3.eth.Contract(contractABI, contractAddress)
 
 const app = express()
-app.use(cors())
-app.use(bodyParser.json())
 
 async function getInfo() {
     const title = await contract.methods.title().call()
