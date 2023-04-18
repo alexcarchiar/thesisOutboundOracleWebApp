@@ -267,14 +267,14 @@ app.get('/', async (req,res) => {
         const description = strings[1]
         const signature = strings[2]
         const isValid = verifySignature(title,description,signature,public_key,signing_algorithm,format_string)
-        let response = "<p>Title: " + title + "<p>"
-        response+= "<p>Description: " + description + "<p>"
-        response+= "<p>Signature: " + signature + "<p>"
+        let response = "<p>Title: " + title + "</p>"
+        response+= "<p>Description: " + description + "</p>"
+        response+= "<p>Signature: " + signature + "</p>"
         if (isValid) {
-            response+="<p>Valid Signature" + "<p>"
+            response+="<p>Valid Signature" + "</p>"
             res.send(response)
         } else {
-            response+="<p>False signature" + "<p>"
+            response+="<p>False signature" + "</p>"
             res.send(response)
         }
     }
